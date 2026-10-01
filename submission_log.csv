@@ -1,0 +1,7 @@
+Submission,Experiment,CV_AUC,Public_LB_AUC,Delta_vs_Current,Notes
+submission.csv,EXP-004,0.941485,0.94104,0.0,Original baseline submission on Kaggle Public LB
+submission_final_candidate.csv,EXP-013,0.945258,,0.004023,EXP-013 candidate (preserved as rollback)
+submission_EXP-019_best.csv,EXP-019,0.945386,,0.004151,EXP-019 candidate (preserved as rollback)
+submission_EXP-020_best.csv,EXP-020,0.945539,,0.004054,"EXP-020 candidate (preserved as rollback)"
+submission_FINAL_SAFETY.csv,EXP-020,0.945539,,0.004054,"FINAL-SAFETY: Strict Nested 5x5 OOF TE (s=7.5) + XGB(0.70)/LGBM(0.30) Rank Blend. Zero train/val leakage."
+submission_FINAL_PRIMARY.csv,EXP-022,0.945660,,0.004175,"FINAL-PRIMARY: Multi-Seed (42,43,44) Ensembled LightGBM + CUDA XGBoost on 26 Digit-Augmented Features (Rank 0.70/0.30). Peak OOF 0.945660, Holdout 0.945569."

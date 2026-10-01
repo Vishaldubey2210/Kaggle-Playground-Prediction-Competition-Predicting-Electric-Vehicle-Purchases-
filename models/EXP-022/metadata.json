@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-022",
+  "candidate_role": "FINAL-PRIMARY",
+  "description": "Multi-Seed (42, 43, 44) Ensembled LightGBM + CUDA XGBoost on 26 Digit-Augmented Features",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "blend_weights": {
+    "xgb": 0.7,
+    "lgb": 0.3
+  },
+  "oof_auc": 0.94566,
+  "oof_std": 0.000558,
+  "holdout_auc": 0.945569,
+  "features_count": 27,
+  "n_test_rows": 286571
+}

@@ -1,0 +1,23 @@
+Exp,Model,Features,Holdout_AUC,CV_AUC,CV_STD,LB_AUC,Delta_vs_Baseline,Status,Observation
+001,Logistic Regression,Standardized numerical + one-hot categorical,0.937963,0.938094,0.000887,,0.0,Baseline,Verified baseline
+002,CatBoost,Original + native categorical handling,0.941125,0.941302,0.0006,,0.003162,Baseline,Verified native CatBoost baseline
+003,CatBoost,Original + 4 controlled domain features,0.941039,0.941237,0.000583,,-8.6e-05,Rejected,Features dropped per evidence rule
+004,CatBoost tuned,Original features; Depth 6 / LR 0.07,0.941235,0.941485,0.00058,0.94104,0.000183,Baseline Best,Current Kaggle Public LB baseline
+005,CatBoost tuned,Original features; Depth 8 / L2 reg 6,0.94118,,,,-5.5e-05,Rejected,Weaker than EXP-004
+006,CatBoost (EXP-004),Original features WITHOUT ID column,0.941375,,,,0.00014,Accepted,Removing ID eliminates index overfitting
+007,LightGBM (Adv Val),Train vs Test classification without ID,0.49608,,,,,Diagnostic,AUC ~0.50 confirms zero train/test covariate shift
+008,LightGBM (Ablation),Synthetic Digit & Frequency Features,0.942837,,,,0.001602,Accepted,Strong positive signal across all synthetic digit/freq families
+009,LightGBM,Combined Synthetic & Domain Features,0.943378,,,,0.002143,Accepted,LightGBM yields massive gain on combined features
+010,XGBoost (CUDA),Combined Synthetic & Domain Features,0.943501,,,,0.002266,Accepted,XGBoost achieves highest individual model score
+011,CatBoost,Combined Synthetic & Domain Features,0.94239,,,,0.001155,Accepted,"Solid improvement, slightly behind tree-hist algorithms"
+012,XGB + LGBM + OOF TE,Combined Features + 5-Fold OOF Target Encoding,0.945199,,,,0.003964,Accepted,OOF TE on exact income values delivers breakthrough performance
+013,XGB + LGBM Ensemble,Rank Average Blend of EXP-012 Top Models,0.945258,,,,0.004023,Reference,Established reference candidate
+014,EXP-013 Reproduction,Identical Pipeline & Models Verification,0.945258,,,,0.004023,Verified,100% exact reproduction confirmed
+015,XGB + LGBM 5-Fold OOF,True 5-Fold OOF on 668k rows with OOF TE,,0.94331,0.00052,,0.001825,Accepted,5-fold CV lift +0.001825 over baseline EXP-004 CV
+016,OOF Weight Grid,Exploration of Probability vs Rank Blend,,0.943471,,,0.001986,Accepted,XGBoost dominance identified on OOF evaluation
+017,Tuned Models + s=7.5,Refined GBDT Hypers + Optimal Smoothing,0.945386,0.943471,0.000468,,0.004151,Accepted,New peak holdout AUC 0.945386; lowest CV std 0.000468
+018,Stacking Analysis,LogisticRegression on OOF Predictions,,0.943313,,,-0.000158,Rejected,Stacking slightly underperforms rank-average blend
+019,Tuned Ensemble Best,Final Full-Data Tuned LightGBM + XGBoost,0.945386,0.943471,0.000468,,0.004151,Candidate,Promoted as previous candidate
+020,Strict Nested 5x5 OOF Ensemble,Leak-Free Nested TE (s=7.5) + XGB(0.7)/LGBM(0.3),0.945386,0.945539,0.000572,,0.004054,FINAL-SAFETY,Strict leak-free double CV; outer OOF 0.945539; 0 leakage; preserved as FINAL-SAFETY
+021,Refined Digit Decomposition,Base 20 + 6 Retained Digits (26 feats) + Nested TE,0.945553,0.945660,0.000558,,0.004175,Accepted,Phase B digit attack yields +0.000121 OOF gain; lower variance
+022,Multi-Seed Final Primary Ensemble,Seeds 42/43/44 Multi-Seed Refined Digits Ensemble,0.945569,0.945660,0.000558,,0.004175,FINAL-PRIMARY,Multi-seed ensembling provides +0.000016 holdout lift; selected as FINAL-PRIMARY

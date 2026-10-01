@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-020",
+  "description": "Strict Nested Leak-Free OOF Target Encoding (s=7.5) + Tuned LightGBM + Tuned XGBoost",
+  "features": [
+    "Age",
+    "Annual_Income_USD",
+    "Daily_Commute_km",
+    "Number_of_Cars_Owned",
+    "Charging_Stations_Near_Home",
+    "Charging_Stations_Near_Work",
+    "Environmental_Concern_Level",
+    "Gender",
+    "City_Type",
+    "Current_Car_Type",
+    "Home_Charging_Possible",
+    "Subsidy_Available",
+    "Range_Anxiety_Level",
+    "Income_Freq",
+    "Income_Mod100",
+    "Income_Mod1000",
+    "Income_Tens",
+    "Income_Hundreds",
+    "Commute_Decimal",
+    "Subsidy_Income_Prod",
+    "Income_TE"
+  ],
+  "smoothing": 7.5,
+  "oof_auc_lgb": 0.945395,
+  "oof_auc_xgb": 0.945509,
+  "oof_auc_blend_50_50": 0.945529,
+  "oof_auc_blend_opt": 0.945539,
+  "best_weights": {
+    "xgb": 0.7,
+    "lgb": 0.3
+  },
+  "holdout_auc": 0.945386,
+  "n_samples_train": 668665,
+  "n_samples_test": 286571
+}

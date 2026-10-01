@@ -1,0 +1,117 @@
+# ==============================================================================
+# Git Ignore Configuration - EV Purchase Prediction
+# ==============================================================================
+
+# --- Python Byte-code & Cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Jupyter Notebook Checkpoints ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# --- Operating System Artifacts ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Logging & Terminal Dumps ---
+*.log
+*.out
+*.err
+continuation*.log
+continuation*.out.log
+continuation*.err.log
+
+# --- Machine Learning Engine Temporary Caches ---
+catboost_info/
+lightning_logs/
+wandb/
+.pytest_cache/
+
+# --- AI Agent Scratch & Iteration Scripts (Internal experiment runs) ---
+append_audit_to_notebook.py
+append_final_attack_to_notebook.py
+audit_and_validate_exp020.py
+continue_notebook.py
+generate_exp020_final.py
+generate_final_submissions.py
+run_continuation.py
+run_exp021_full_cv.py
+run_experiments.py
+run_feature_attack.py
+run_phases_g_m_n_o_h_j.py
+backups/
+
+# --- Heavy Data Files (Raw CSVs and compressed datasets) ---
+data/*.csv
+data/*.zip
+data/*.tar.gz
+data/*.parquet
+!data/.gitkeep
+
+# --- Predictions, NumPy Dumps & Temporary Artifacts ---
+predictions/
+*.npy
+*.npz
+
+# --- Large Submission CSVs ---
+submissions/*.csv
+!submissions/.gitkeep
+
+# --- Heavy Model Weights & Binary Checkpoints ---
+*.pkl
+*.joblib
+*.model
+*.bin
+*.pt
+*.pth
+*.onnx
+models/**/*.txt
+models/**/*.json
+!models/.gitkeep
+!models/EXP-020/metadata.json
+!models/EXP-022/metadata.json
