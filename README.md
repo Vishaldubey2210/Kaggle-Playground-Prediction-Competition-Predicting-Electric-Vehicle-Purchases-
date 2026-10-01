@@ -1,13 +1,15 @@
 # ⚡ Electric Vehicle (EV) Purchase Prediction — Machine Learning Platform
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://vishaldubey2210-kaggle-playground-prediction-competi-app-wabxa4.streamlit.app/)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Playground_Series_s6e9-20BEFF.svg?logo=kaggle&logoColor=white)](https://www.kaggle.com/competitions/playground-series-s6e9/overview)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![LightGBM](https://img.shields.io/badge/Model-LightGBM-success.svg?logo=lightgbm&logoColor=white)](https://lightgbm.readthedocs.io/)
 [![XGBoost](https://img.shields.io/badge/Model-CUDA_XGBoost-orange.svg?logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
-[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit_v1.58-red.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![ROC-AUC](https://img.shields.io/badge/OOF_ROC--AUC-0.94566-brightgreen.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-purple.svg)]()
 
+> 🌐 **Live Web Demo**: [vishaldubey2210-kaggle-playground-prediction-competi-app-wabxa4.streamlit.app](https://vishaldubey2210-kaggle-playground-prediction-competi-app-wabxa4.streamlit.app/)
+>
 > An end-to-end, enterprise-grade Machine Learning solution and interactive web application for the official Kaggle competition: **[Playground Series - Season 6, Episode 9 (EV Purchase Prediction)](https://www.kaggle.com/competitions/playground-series-s6e9/overview)**. Trained on **668,000+ consumer records**, featuring **strict leak-free nested target encoding**, **synthetic digit decomposition**, and a **multi-seed rank-averaged GBDT ensemble** achieving top-tier competitive accuracy (**0.94566 OOF ROC-AUC**).
 
 ---
@@ -169,7 +171,11 @@ The primary production inference system combines:
 
 ## ⚡ 7. Interactive Streamlit Web Application
 
-The project includes an interactive web dashboard (`app.py`):
+> 🚀 **Live Deployed Application**:  
+> You can try the live application directly in your browser:  
+> 👉 **[https://vishaldubey2210-kaggle-playground-prediction-competi-app-wabxa4.streamlit.app/](https://vishaldubey2210-kaggle-playground-prediction-competi-app-wabxa4.streamlit.app/)**
+
+The project includes an interactive web dashboard (`app.py`) which can also be run locally:
 
 ```bash
 streamlit run app.py
